@@ -1,11 +1,10 @@
-
 import { ActionKeys } from '../enums/action-keys.enum';
 import { NumericKeys } from '../enums/numeric-keys.enum';
 import { OperatorKeys } from '../enums/operator-keys.enum';
 import { ICalculatorModel } from '../interfaces/calculator-model.interface';
 
-export class StandardCalculatorModel implements ICalculatorModel {
-
+export class AbstractCalculatorModelFactory implements ICalculatorModel {
+  // numeric key pressed <0, 1, 2, 3, 4, 5, 6, 7, 8, 9>
   private _buffer: string = '';
 
   public pressNumericKey(key: NumericKeys): void {
@@ -37,4 +36,9 @@ export class StandardCalculatorModel implements ICalculatorModel {
     return this._buffer;
   }
 
+
+}
+
+class StandardCalculatorModelFactory extends AbstractCalculatorModelFactory implements ICalculatorModel {
+    public 
 }
